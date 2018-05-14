@@ -176,8 +176,8 @@ class Send{
                     $html.="<a class='cp-button' href='{$this->entranceUrl}" . "?page=1" .$query."'>首页</a>&nbsp;&nbsp;";
                     $html.="<a class='cp-button' href='{$this->entranceUrl}" . '?page=' .$this->prePage($page).$query."'>上一页</a>&nbsp;&nbsp;";
                 } else {
-                    $html.="<a href='javascript:;' class='cp-button disabled'>首页</a>&nbsp;&nbsp;";
-                    $html.="<a href='javascript:;' class='cp-button disabled'>上一页</a>&nbsp;&nbsp;";
+                    $html.="<a href='javascript:;' class='cp-button cp-disabled'>首页</a>&nbsp;&nbsp;";
+                    $html.="<a href='javascript:;' class='cp-button cp-disabled'>上一页</a>&nbsp;&nbsp;";
                 }
 
                 if ($page < $pageNum && $page >= 1) {
