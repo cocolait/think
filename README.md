@@ -46,10 +46,10 @@ $pageShow = \cocolait\bootstrap\page\Send::instance(['total'=>$total,'limit' => 
 
 ```
 
-# 自定义样式
-> 最外层div[class='page']
-> 首页|上一页|下一页|末尾 按钮样式 a.class['cp-button']
-> 禁止点击class['cp-disabled']
-> 第几页 span.class['cp-page-index']
-> 共多少页 span.class['cp-page-total']
-> 跳转按钮 button.class['cp-jump']
+## 自定义样式
+- 最外层div[class='page']
+- 首页|上一页|下一页|末尾 按钮样式 a.class['cp-button']
+- 禁止点击class['cp-disabled']
+- 第几页 span.class['cp-page-index']
+- 共多少页 span.class['cp-page-total']
+- 跳转按钮 button.class['cp-jump']
