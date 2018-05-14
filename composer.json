@@ -1,0 +1,31 @@
+{
+    "name": "cocolait/think_page",
+    "description": "thinkPHP 5.0.x 自定义分页扩展",
+    "type": "library",
+    "homepage": "http://www.mgchen.com/",
+    "require": {
+       "php": ">=5.4.0"
+    },
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "cocolait",
+            "email": "enkipen@qq.com"
+        }
+    ],
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "stable",
+    "autoload" : {
+        "psr-4" : {
+            "cocolait\\bootstrap\\" : "src/"
+        }
+    }
+}
