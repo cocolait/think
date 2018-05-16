@@ -1,5 +1,5 @@
 # think-page
-thinkPHP 5.0.x 自定义分页扩展
+thinkPHP 5.0.x 功能扩展包（目前已有分页扩展，App token验证扩展）
 ## 链接
 - 博客：http://www.mgchen.com
 - github：https://github.com/cocolait
@@ -17,7 +17,7 @@ composer require cocolait/think_page
 # 使用说明
 > 该扩展包只适合thinkPHP 5.0.x版本
 
-# 使用案例
+# 分页使用案例
 ```php
 <?php
 //在控制器用使用
@@ -45,8 +45,17 @@ if ($total > 0) {
 $pageShow = \cocolait\bootstrap\page\Send::instance(['total'=>$total,'limit' => $limit])->render($page,$pageNum,$request->param());
 
 ```
-
-## 自定义样式
+# token使用案例
+```php
+<?php
+// token有心跳机制 当用户登录成功后在token有效期之类会根据心跳值来叠加token的生命周期
+// 获取用户登录后的token 分配给前端
+$data = \auth\Token::instance()->getAccessToken($uid);
+// 验证token
+$token = 'apMuQuY3SgKqNzYm4s6qGzJNsgY57nYehhKKJrMjQhHeCzY-2l85_l';
+$data = \auth\Token::instance()->checkAccessToken($token);
+```
+## 分页自定义样式
 - 最外层div[class='page']
 - 首页|上一页|下一页|末尾 按钮样式 a.class['cp-button']
 - 禁止点击class['cp-disabled']
