@@ -1,6 +1,6 @@
 {
-    "name": "cocolait/think_page",
-    "description": "thinkPHP 5.0.x 自定义分页扩展",
+    "name": "cocolait/think",
+    "description": "thinkPHP 5.0.x 功能扩展包 （目前已有分页，token验证机制)",
     "type": "library",
     "homepage": "http://www.mgchen.com/",
     "require": {
