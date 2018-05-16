@@ -16,6 +16,8 @@ composer require cocolait/think
 
 # 使用说明
 > 该扩展包只适合thinkPHP 5.0.x版本
+- 分页扩展包可以应用到 thinkPHP 5.0.x 各个版本
+- token类依赖redis扩展 必须支持redis服务 thinkPHP 版本必须大于 V5.0.11
 
 # 分页使用案例
 ```php
@@ -50,10 +52,10 @@ $pageShow = \cocolait\bootstrap\page\Send::instance(['total'=>$total,'limit' => 
 <?php
 // token有心跳机制 当用户登录成功后在token有效期之类会根据心跳值来叠加token的生命周期
 // 获取用户登录后的token 分配给前端
-$data = \auth\Token::instance()->getAccessToken($uid);
+$data = \cocolait\bootstrap\auth\Token::instance()->getAccessToken($uid);
 // 验证token
 $token = 'apMuQuY3SgKqNzYm4s6qGzJNsgY57nYehhKKJrMjQhHeCzY-2l85_l';
-$data = \auth\Token::instance()->checkAccessToken($token);
+$data = \cocolait\bootstrap\auth\Token::instance()->checkAccessToken($token);
 ```
 ## 分页自定义样式
 - 最外层div[class='page']
