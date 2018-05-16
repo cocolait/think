@@ -7,7 +7,7 @@ thinkPHP 5.0.x 功能扩展包（目前已有分页扩展，App token验证扩�
 
 # 安装
 ```php
-composer require cocolait/think_page
+composer require cocolait/think
 ```
 
 # 版本要求
