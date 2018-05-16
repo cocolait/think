@@ -1,4 +1,4 @@
-# think-page
+# think
 thinkPHP 5.0.x 功能扩展包（目前已有分页扩展，App token验证扩展）
 ## 链接
 - 博客：http://www.mgchen.com
