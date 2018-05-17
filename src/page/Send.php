@@ -1,5 +1,5 @@
 <?php
-namespace cocolait\bootstrap\page;
+namespace cocolait\extend\page;
 use think\Request;
 /**
  * 自定义扩展分页操作类

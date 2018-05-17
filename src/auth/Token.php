@@ -1,5 +1,5 @@
 <?php
-namespace cocolait\bootstrap\auth;
+namespace cocolait\extend\auth;
 use think\Cache;
 use think\Config;
 class Token{
