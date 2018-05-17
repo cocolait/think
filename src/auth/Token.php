@@ -41,6 +41,16 @@ class Token{
     // 初始化 参数
     protected function __construct($options = [])
     {
+        if (!defined('THINK_VERSION')) {
+            $this->throwException('该扩展只支持ThinkPHP v5.0.16或以上版本');
+        } else {
+            if (THINK_VERSION < '5.0.16') {
+                $this->throwException('该扩展只支持ThinkPHP v5.0.16或以上版本');
+            }
+        }
+        if (!extension_loaded('redis')) {
+            $this->throwException("该扩展需要支持redis 检测扩展未加载");
+        }
         $config_token_data = Config::get('token');
         $day = isset($config_token_data['day']) ? $config_token_data['day'] : $this->options['day'];
         $prefix = isset($config_token_data['prefix']) ? $config_token_data['prefix'] : $this->options['prefix'];
@@ -283,5 +293,14 @@ class Token{
             "msg" =>  $msg,
             "data" => $data
         ];
+    }
+
+    /**
+     * 抛出异常
+     * @param $error
+     * @throws \Exception
+     */
+    protected function throwException($error) {
+        throw new \Exception($error);
     }
 }

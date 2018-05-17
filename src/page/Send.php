@@ -65,8 +65,15 @@ class Send{
 
     // 初始化
     private function __construct($options){
+        if (!defined('THINK_VERSION')) {
+            $this->throwException('该扩展只支持ThinkPHP v5.0.x版本');
+        } else {
+            if (THINK_VERSION < '5.0') {
+                $this->throwException('该扩展只支持ThinkPHP v5.0.x版本');
+            }
+        }
         $this->request = Request::instance();
-        if (empty(BIND_MODULE)) {
+        if (!defined('BIND_MODULE')) {
             $this->entranceUrl = $this->request->baseFile() . '/' . $this->request->module() . '/' . $this->request->controller() . "/" . $this->request->action();
         } else{
             $this->entranceUrl = $this->request->baseFile() . '/' . $this->request->controller() . "/" . $this->request->action();
@@ -214,5 +221,14 @@ class Send{
         } else {
             return '';
         }
+    }
+
+    /**
+     * 抛出异常
+     * @param $error
+     * @throws \Exception
+     */
+    protected function throwException($error) {
+        throw new \Exception($error);
     }
 }
