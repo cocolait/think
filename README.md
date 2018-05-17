@@ -44,7 +44,7 @@ if ($total > 0) {
 }
 
 // 分页输出显示 不管有没有查询条件写法都是一致的 只需要把请求体放到第三个参数就行
-$pageShow = \cocolait\bootstrap\page\Send::instance(['total'=>$total,'limit' => $limit])->render($page,$pageNum,$request->param());
+$pageShow = \cocolait\extend\page\Send::instance(['total'=>$total,'limit' => $limit])->render($page,$pageNum,$request->param());
 
 ```
 # token使用案例
@@ -52,11 +52,14 @@ $pageShow = \cocolait\bootstrap\page\Send::instance(['total'=>$total,'limit' => 
 <?php
 // token有心跳机制 当用户登录成功后在token有效期之类会根据心跳值来叠加token的生命周期
 // 获取用户登录后的token 分配给前端
-$data = \cocolait\bootstrap\auth\Token::instance()->getAccessToken($uid);
+$data = \cocolait\extend\auth\Token::instance()->getAccessToken($uid);
 // 验证token
 $token = 'apMuQuY3SgKqNzYm4s6qGzJNsgY57nYehhKKJrMjQhHeCzY-2l85_l';
-$data = \cocolait\bootstrap\auth\Token::instance()->checkAccessToken($token);
+$data = \cocolait\extend\auth\Token::instance()->checkAccessToken($token);
 ```
+## 分页效果图
+![可以点击](https://gitee.com/uploads/images/2018/0516/204533_28e59dfd_588912.png "3.png")
+
 ## 分页自定义样式
 - 最外层div[class='page']
 - 首页|上一页|下一页|末尾 按钮样式 a.class['cp-button']
